@@ -16,6 +16,16 @@
                 <p>We had such a great time in LA!</p>
             </div>
         </div>
+        @foreach (session('imgBanner') as $item)
+            <div class="carousel-item">
+                <img src="{{ asset($item->url) }}" alt="Chicago">
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>We had such a great time in LA!</p>
+                </div>
+            </div>
+        @endforeach
+        {{-- 
         <div class="carousel-item">
             <img src="{{ asset('posters/banner2.png') }}" alt="Chicago">
             <div class="carousel-caption">
@@ -30,6 +40,7 @@
                 <p>We had such a great time in LA!</p>
             </div>
         </div>
+        --}}
     </div>
   
     <!-- Left and right controls -->

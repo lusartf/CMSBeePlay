@@ -9,6 +9,12 @@ use DB;
 
 class BannerController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }    
+
     public function index(){
         //$banner = Banner::all();
         $banner = Banner::paginate(9);
@@ -62,16 +68,21 @@ class BannerController extends Controller
 
     public function agregar_quitar_slide($id,$valor){
         
-        DB::table('banners')
-            ->where('id', $id)
-            ->update(['status' => $valor]);
-
         $banners = DB::table('banners')->where('status',1)->get();
         $countSlide = $banners->count();
 
-        //dd($countSlide);
+        //Si hay mas de 6 activos(1) y la nueva accion viene con 1, aborta el cambio de status y redirecciona
+        if ($countSlide >= 6 && $valor == 1) {
+            //dd("maximo slide alcanzado");
+            return redirect()->route('listBanner')->with('countSlide',$countSlide);
+        }
 
-        return redirect()->route('listBanner')->with('countSlide',$countSlide);
+        DB::table('banners')
+                ->where('id', $id)
+                ->update(['status' => $valor]);
+    
+        //return redirect()->route('listBanner')->with('countSlide',$countSlide);
+        return redirect()->route('listBanner');
         
     }
 }

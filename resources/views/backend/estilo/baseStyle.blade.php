@@ -248,7 +248,7 @@
                                 <input id="textCategoryColor" type="color" class="form-control" name="textCategoryColor" value="{{$style->textCategoryColor}}" onchange="cambioTextCategory(this)" required>                                
                             </div>
                         </div>
-
+                        {{-- 
                         <div class="form-group row">
                             <label for="navBarLogo" class="col-md-4 col-form-label text-md-right">URL Logo NavBar</label>
                             <div class="col-md-6">
@@ -269,7 +269,8 @@
                                 <input id="loginLogo" type="text" class="form-control" name="loginLogo" value="{{$style->loginLogo}}" required>
                             </div>
                         </div>
-
+                        --}}
+                        
                         <div class="form-group row">
                             <label for="slideItem" class="col-md-4 col-form-label text-md-right">No de Item Slide</label>
                             <div class="col-md-6">

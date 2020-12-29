@@ -11,6 +11,11 @@ use App\Style;
 class StyleController extends Controller
 {
     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         return view('backend.estilo.listStyle');
     }
@@ -26,17 +31,6 @@ class StyleController extends Controller
     //aplicar cambios
     public function update(Request $request)    {
         
-        //dd($request->);
-
-        //$this->validate($request,[ 'name'=>'required', 'email'=>'required', 'password'=>'required']);
-     
-        /*
-        DB::table('role_user')
-              ->where('user_id', $request -> id)
-              ->update(['role_id' => $request -> tipo]);
-        */
-        //'textCategoryColor','navBarLogo', 'footerLogo','loginLogo', 'slideItem', 
-    
         $style = Style::find(1);
         $style->backgroundColor = $request -> backgroundColor;
         $style->navBarColor = $request -> navBarColor;
@@ -44,9 +38,6 @@ class StyleController extends Controller
         $style->footerColor = $request -> footerColor;
         $style->textFooterColor = $request -> textFooterColor;
         $style->textCategoryColor = $request -> textCategoryColor;
-        $style->navBarLogo = $request -> navBarLogo;
-        $style->footerLogo = $request -> footerLogo;
-        $style->loginLogo = $request -> loginLogo;
         $style->slideItem = $request -> slideItem;
                
         //dd($style);
