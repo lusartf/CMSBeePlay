@@ -17,6 +17,8 @@ class CreateBannerTable extends Migration
             $table->bigIncrements('id');
             $table->string('url');
             $table->boolean('status')->default(0);
+            $table->string('title',70)->nullable(true);
+            $table->text('description')->nullable(true);
             $table->timestamps();
         });
     }

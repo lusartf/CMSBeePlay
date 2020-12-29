@@ -32,7 +32,7 @@
                                                     {{-- <a href="{{ route('deleteImg',$banners->id) }}" class="btn btn-outline-danger btn-sm bt-delete">Eliminar</a> --}}
                                                     <form method='POST' action="{{ route('deleteImg',$banners->id) }}" class="d-inline bt-delete">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm"><strong>Eliminar</strong></button>
                                                     </form>
                                                 @else
                                                     <a href="" class="btn btn-outline-secondary btn-sm disabled">Eliminar</a>
@@ -42,13 +42,18 @@
                                                 <div class="checkbox">
                                                     <label for="">Slide: </label>
                                                     @if ($banners->status == 1)   
-                                                        <a href="{{ route('statusBanner',array($banners->id,0)) }}" class="btn btn-info btn-sm">Quitar</a>
+                                                        <a href="{{ route('statusBanner',array($banners->id,0)) }}" class="btn btn-info btn-sm"><strong>Quitar</strong></a>
                                                     @else
-                                                        <a href="{{ route('statusBanner',array($banners->id,1)) }}" class="btn btn-outline-info btn-sm">Agregar</a>
+                                                        <a href="{{ route('statusBanner',array($banners->id,1)) }}" class="btn btn-outline-info btn-sm"><strong>Agregar</strong></a>
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>                                        
+                                        </div>  
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <a href="{{ route('infoForm',$banners->id) }}" class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; <strong>Info</strong> &nbsp;&nbsp;&nbsp;</a>
+                                            </div>
+                                        </div>                                      
                                     </div>
                                 </div>
                             </div>

@@ -85,4 +85,25 @@ class BannerController extends Controller
         return redirect()->route('listBanner');
         
     }
+
+    public function infoForm($id){
+        
+        return view('backend.banner.infoForm')->with('id',$id);
+
+    }
+
+    public function addInfo(Request $request){
+
+        //dd($request -> id);
+
+        //Actualizando la informacion de la imagen
+        DB::table('banners')
+                ->where('id', $request->id)
+                ->update([
+                    'title' => $request->title,
+                    'description' => $request->description
+                    ]);
+
+        return redirect()->route('listBanner');
+    }
 }

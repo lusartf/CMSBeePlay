@@ -54,6 +54,7 @@ use App\Banner;
             $request->session()->put('loginLogo', $data->loginLogo);
             $request->session()->put('slideItem', $data->slideItem);
             $request->session()->put('imgBanner',$banner);
+        
 
             //
     
@@ -156,6 +157,17 @@ use App\Banner;
         Route::get('/backend/banner/status/{id}/{value}',[
             'uses'	=>	'BannerController@agregar_quitar_slide',
             'as'	=>	'statusBanner'
+        ]);
+
+        //Agregar Informacion
+        Route::get('/backend/banner/info/{id}',[
+            'uses'	=>	'BannerController@infoForm',
+            'as'	=>	'infoForm'
+        ]);
+        //Actualizar info
+        Route::post('/backend/banner/addInfo',[
+            'uses'	=>	'BannerController@addInfo',
+            'as'	=>	'addInfo'
         ]);
 
 
