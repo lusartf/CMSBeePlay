@@ -22,13 +22,16 @@ use App\Banner;
             return view('site.pages.login');
         });
     */
+    /* ----- Login Cliente ----- */
+        //Formulario - login Cliente
+        Route::get('/', 'AccountController@showLoginForm');
 
-    //Ruta1- Muestra formulario - login Cliente
-    Route::get('/', 'AccountController@showLoginForm');
-
-    //Ruta2- Login
-    Route::post('/login/user', 'AccountController@login')->name('account');
-
+        //Login
+        Route::post('/login/user', 'AccountController@login')->name('account');
+        
+        //Cerrar sesion
+        Route::get('/logout', 'AccountController@logout')->name('closeSesion');
+    /* ------------------------- */
 
     Route::get('/start', function (Request $request) {
         

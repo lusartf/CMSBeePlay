@@ -13,7 +13,7 @@
                 <a class="nav-link " href="{{url('portfolio')}}" style="color: {{ session('iconNavBarColor') }}"><i class="fas fa-tv"></i> &nbsp;  TV </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('logout')}}" style="color: {{ session('iconNavBarColor') }};"> <i class="fas fa-external-link-alt"></i> &nbsp;  Salir</a>
+                <a class="nav-link" href="{{ route('closeSesion') }}" style="color: {{ session('iconNavBarColor') }};"> <i class="fas fa-external-link-alt"></i> &nbsp;  Salir</a>
             </li>
         </ul>
     </div>
