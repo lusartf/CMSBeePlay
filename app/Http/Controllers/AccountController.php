@@ -16,6 +16,7 @@ use App\Banner;
 
 use Auth;
 use Cookie;
+use Session;
 
 
 
@@ -154,6 +155,7 @@ class AccountController extends Controller
         }
 
         //alert()->info('Sesion Cerrada Exitosamente', 'Sesion Terminada');
+        Session::forget('BeenetSession');
         return redirect('/');
     }
 }

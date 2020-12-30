@@ -46,8 +46,11 @@
     </style>
 
     <!-- Ultimate Player -->
-    <link rel="stylesheet" type="text/css" href="content/global.css">
-    <script type="text/javascript" src="java/FWDUVPlayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('content/global.css')}}">
+    <script type="text/javascript" src="{{ asset('java/FWDUVPlayer.js')}}"></script>
+    <!-- contructor Player-->
+    @yield('construct_player')
+    {{-- 
     <script type="text/javascript">
 
         FWDUVPUtils.onReady(function(){
@@ -322,7 +325,7 @@
             localStorage.setItem("urlCast", prueba);	
         }
     </script>	 
-   
+    --}}
 </head>
 
 
@@ -330,7 +333,7 @@
     <div class="container">
 
         @include('site.layouts.partials.navbar');
-
+        
         @yield('content')
 
     </div>     

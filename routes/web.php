@@ -32,72 +32,64 @@ use App\Banner;
         //Cerrar sesion
         Route::get('/logout', 'AccountController@logout')->name('closeSesion');
     /* ------------------------- */
+    
+    /*
+        Route::get('/start', function (Request $request) {
+            
+            $data = Style::all()->first();
 
-    Route::get('/start', function (Request $request) {
+            //Trae todos los Elementos de Banners Activos
+            $banner = json_decode(Banner::all()->where('status',1));
+            //dd($banner);
+            //dd($data->iconNavBarColor);
         
-        $data = Style::all()->first();
+            if ($data == null) {
+                //Guardando configuracion por defecto
+                $request->session()->put('backgroundColor', '#2E2E2E');
+                $request->session()->put('navBarColor', '#FFFFFF');
+                $request->session()->put('iconNavBarColor', '#FF6600');
+                $request->session()->put('footerColor', '#FFFF66');
+                $request->session()->put('textFooterColor', '#2E2E2E');
+                $request->session()->put('textCategoryColor', '#f74016');
+                $request->session()->put('navBarLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
+                $request->session()->put('footerLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
+                $request->session()->put('loginLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
+                $request->session()->put('slideItem', '4');
+            }else{
+                //Guardando como variable de Session
+                $request->session()->put('backgroundColor', $data->backgroundColor);
+                $request->session()->put('navBarColor', $data->navBarColor);
+                $request->session()->put('iconNavBarColor', $data->iconNavBarColor);
+                $request->session()->put('footerColor', $data->footerColor);
+                $request->session()->put('textFooterColor', $data->textFooterColor);
+                $request->session()->put('textCategoryColor', $data->textCategoryColor);
+                $request->session()->put('navBarLogo', $data->navBarLogo);
+                $request->session()->put('footerLogo', $data->footerLogo);
+                $request->session()->put('loginLogo', $data->loginLogo);
+                $request->session()->put('slideItem', $data->slideItem);
+                $request->session()->put('imgBanner',$banner);
+            
 
-        //Trae todos los Elementos de Banners Activos
-        $banner = json_decode(Banner::all()->where('status',1));
-        //dd($banner);
-        //dd($data->iconNavBarColor);
-    
-        if ($data == null) {
-            //Guardando configuracion por defecto
-            $request->session()->put('backgroundColor', '#2E2E2E');
-            $request->session()->put('navBarColor', '#FFFFFF');
-            $request->session()->put('iconNavBarColor', '#FF6600');
-            $request->session()->put('footerColor', '#FFFF66');
-            $request->session()->put('textFooterColor', '#2E2E2E');
-            $request->session()->put('textCategoryColor', '#f74016');
-            $request->session()->put('navBarLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
-            $request->session()->put('footerLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
-            $request->session()->put('loginLogo', 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png');
-            $request->session()->put('slideItem', '4');
-        }else{
-            //Guardando como variable de Session
-            $request->session()->put('backgroundColor', $data->backgroundColor);
-            $request->session()->put('navBarColor', $data->navBarColor);
-            $request->session()->put('iconNavBarColor', $data->iconNavBarColor);
-            $request->session()->put('footerColor', $data->footerColor);
-            $request->session()->put('textFooterColor', $data->textFooterColor);
-            $request->session()->put('textCategoryColor', $data->textCategoryColor);
-            $request->session()->put('navBarLogo', $data->navBarLogo);
-            $request->session()->put('footerLogo', $data->footerLogo);
-            $request->session()->put('loginLogo', $data->loginLogo);
-            $request->session()->put('slideItem', $data->slideItem);
-            $request->session()->put('imgBanner',$banner);
+                //
         
-
-            //
-    
-        }
+            }
+            
+            //valida si existe la variable
+            //if ($request->session()->has('slideItem')) { }
         
-        //valida si existe la variable
-        //if ($request->session()->has('slideItem')) { }
-    
-        return view('site.layouts.template');
-    })->name('login_web');
+            return view('site.layouts.template');
+        })->name('login_web');
+        Route::get('/portfolio', function (Request $request) {
+            return view('site.pages.portfolio');
+        });
+    */
 
-    Route::get('/portfolio', function (Request $request) {
-    
-        return view('site.pages.portfolio');
-    
-    });
-
-    //Ruta3- Portfolio
+    //Portfolio
     Route::get('portfolio', 'PortfolioController@show')->name('portfolio');
 
-    //Ruta4- Player
-    Route::get('player', 'PlayerController@play')->name('player');
+    //Player
+    Route::get('/player', 'PlayerController@getPlayer')->name('player');
 
-    /*
-    Route::get('/player', function (Request $request) {
-    
-        return view('site.pages.player');
-    
-    });
-    */
 /* ================================================= */
 
 
