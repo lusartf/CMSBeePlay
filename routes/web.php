@@ -16,9 +16,19 @@ use App\Banner;
 
 /* =================== SitioWeb ==================== */
     //Pagina que muestra letra laravel
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    /*
+        Route::get('/', function () {
+            //return view('welcome');
+            return view('site.pages.login');
+        });
+    */
+
+    //Ruta1- Muestra formulario - login Cliente
+    Route::get('/', 'AccountController@showLoginForm');
+
+    //Ruta2- Login
+    Route::post('/login/user', 'AccountController@login')->name('account');
+
 
     Route::get('/start', function (Request $request) {
         
