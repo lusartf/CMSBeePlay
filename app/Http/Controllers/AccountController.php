@@ -108,9 +108,9 @@ class AccountController extends Controller
                     
                 }
 
+                //return view('site.pages.portfolio');
+                return redirect()->route('portfolio');
 
-                return view('site.pages.portfolio');
-                //return redirect()->route('login_web');
             }
             else
             {

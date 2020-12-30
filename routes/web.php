@@ -84,12 +84,20 @@ use App\Banner;
         return view('site.pages.portfolio');
     
     });
-    
+
+    //Ruta3- Portfolio
+    Route::get('portfolio', 'PortfolioController@show')->name('portfolio');
+
+    //Ruta4- Player
+    Route::get('player', 'PlayerController@play')->name('player');
+
+    /*
     Route::get('/player', function (Request $request) {
     
         return view('site.pages.player');
     
     });
+    */
 /* ================================================= */
 
 
