@@ -184,8 +184,25 @@ use App\Banner;
         ]);
     
     /* --------- Gestion Plataformas Digitales --------- */
+        // Lista de Imagenes
+        Route::get('/backend/platform/list', 'PlatformController@index')->name('listPlatform');
+
         // Agregar Plataforma 
-        
+        Route::get('/backend/platform/add', 'PlatformController@addForm')->name('addPlatform');
+        Route::post('/backend/platform/add', 'PlatformController@add')->name('add');
+
+        //Eliminar Plataforma
+        Route::post('/backend/platform/deletePlat/{id}',[
+            'uses'  => 'PlatformController@destroy',
+            'as'    => 'deletePlatform'
+        ]);
+
+        //Editar Platform
+        Route::get('/backend/platform/editPlat/{id}',[
+            'uses'	=>	'PlatformController@editPlatform',
+            'as'	=>	'editPlatform'
+        ]);
+
 
 /* =================================================================== */
 
