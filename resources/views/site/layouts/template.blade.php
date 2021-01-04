@@ -329,15 +329,12 @@
 </head>
 
 
-<body style="background-color: {{ session('backgroundColor') }}">
-    <div class="container">
+<body style="background-color: {{ session('backgroundColor') }}">    
 
-        @include('site.layouts.partials.navbar');
-        
-        @yield('content')
+    @include('site.layouts.partials.navbar');
 
-    </div>     
-
+    @yield('content')
+    
     <br><br><br><br>
     <footer class="footer">
         @include('site.layouts.partials.footer')

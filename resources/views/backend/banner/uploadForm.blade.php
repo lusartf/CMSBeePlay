@@ -27,8 +27,8 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                            <a href="{{ route('listBanner') }}" class="btn btn-info btn-lg btn-block">
-                                Ir a Galeria
+                            <a href="{{ route('listBanner') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                 Regresar a Galeria
                             </a>
                         </div>
                     </div>

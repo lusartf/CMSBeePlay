@@ -201,8 +201,9 @@
 
                         <!-- Background -->
                         <div class="form-group row">
-                            <label for="backgroundColor" class="col-md-4 col-form-label text-md-right">Color de Fondo</label>
-
+                            <label for="backgroundColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color de Fondo</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="backgroundColor" type="color" class="form-control" name="backgroundColor" value="{{$style->backgroundColor}}" onchange="cambioFondo(this)" required autofocus>
                             </div>
@@ -210,7 +211,9 @@
 
                         <!-- Navbar Color -->
                         <div class="form-group row">
-                            <label for="navBarColor" class="col-md-4 col-form-label text-md-right">Color de NavBar</label>
+                            <label for="navBarColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color de NavBar</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="navBarColor" type="color" class="form-control" name="navBarColor" value="{{$style->navBarColor}}" onchange="cambioNavColor(this)" required>                                
                             </div>
@@ -218,7 +221,9 @@
 
                         <!-- Color elementos Navbar -->
                         <div class="form-group row">
-                            <label for="iconNavBarColor" class="col-md-4 col-form-label text-md-right">Color Elementos Navbar</label>
+                            <label for="iconNavBarColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color Elementos Navbar</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="iconNavBarColor" type="color" class="form-control" name="iconNavBarColor" value="{{$style->iconNavBarColor}}" onchange="cambioItemNav(this)" required>
                             </div>
@@ -226,16 +231,19 @@
 
                         <!-- Color Footer -->
                         <div class="form-group row">
-                            <label for="footerColor" class="col-md-4 col-form-label text-md-right">Color de Footer</label>
+                            <label for="footerColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color de Footer</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="footerColor" type="color" class="form-control" name="footerColor" value="{{$style->footerColor}}" onchange="cambioFootColor(this)" required>
-                                
                             </div>
                         </div>
 
                         <!-- Color Texto Footer -->
                         <div class="form-group row">
-                            <label for="textFooterColor" class="col-md-4 col-form-label text-md-right">Color de Texto Footer</label>
+                            <label for="textFooterColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color de Texto Footer</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="textFooterColor" type="color" class="form-control" name="textFooterColor" value="{{$style->textFooterColor}}" onchange="cambioTextFoot(this)" required>                                
                             </div>
@@ -243,36 +251,40 @@
 
                         <!-- Color Texto Categoria -->
                         <div class="form-group row">
-                            <label for="textCategoryColor" class="col-md-4 col-form-label text-md-right">Color texto Categoria</label>
+                            <label for="textCategoryColor" class="col-md-4 col-form-label text-md-right">
+                                <strong>Color texto Categoria</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="textCategoryColor" type="color" class="form-control" name="textCategoryColor" value="{{$style->textCategoryColor}}" onchange="cambioTextCategory(this)" required>                                
                             </div>
                         </div>
                         {{-- 
-                        <div class="form-group row">
-                            <label for="navBarLogo" class="col-md-4 col-form-label text-md-right">URL Logo NavBar</label>
-                            <div class="col-md-6">
-                                <input id="navBarLogo" type="text" class="form-control" name="navBarLogo" value="{{$style->navBarLogo}}" required>
+                            <div class="form-group row">
+                                <label for="navBarLogo" class="col-md-4 col-form-label text-md-right">URL Logo NavBar</label>
+                                <div class="col-md-6">
+                                    <input id="navBarLogo" type="text" class="form-control" name="navBarLogo" value="{{$style->navBarLogo}}" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="footerLogo" class="col-md-4 col-form-label text-md-right">URL Logo Footer</label>
-                            <div class="col-md-6">
-                                <input id="footerLogo" type="text" class="form-control" name="footerLogo" value="{{$style->footerLogo}}" required>
+                            <div class="form-group row">
+                                <label for="footerLogo" class="col-md-4 col-form-label text-md-right">URL Logo Footer</label>
+                                <div class="col-md-6">
+                                    <input id="footerLogo" type="text" class="form-control" name="footerLogo" value="{{$style->footerLogo}}" required>
+                                </div>
                             </div>
-                        </div>
-                    
-                        <div class="form-group row">
-                            <label for="loginLogo" class="col-md-4 col-form-label text-md-right">URL Logo Login</label>
-                            <div class="col-md-6">
-                                <input id="loginLogo" type="text" class="form-control" name="loginLogo" value="{{$style->loginLogo}}" required>
+                        
+                            <div class="form-group row">
+                                <label for="loginLogo" class="col-md-4 col-form-label text-md-right">URL Logo Login</label>
+                                <div class="col-md-6">
+                                    <input id="loginLogo" type="text" class="form-control" name="loginLogo" value="{{$style->loginLogo}}" required>
+                                </div>
                             </div>
-                        </div>
                         --}}
                         
                         <div class="form-group row">
-                            <label for="slideItem" class="col-md-4 col-form-label text-md-right">No de Item Slide</label>
+                            <label for="slideItem" class="col-md-4 col-form-label text-md-right">
+                                <strong>No. de Item Slide</strong>
+                            </label>
                             <div class="col-md-6">
                                 <input id="slideItem" type="text" class="form-control" name="slideItem" value="{{$style->slideItem}}" required>
                             </div>
@@ -281,7 +293,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-dark btn-block">
                                     Aplicar
                                 </button>
                             </div>

@@ -62,16 +62,17 @@ class RegisterController extends Controller
     /* Muestsra listado de Usuarios */
     public function index(Request $request)
     {
+        
         $request->user()->authorizeRoles(['user', 'admin']);
 
-        if (Auth::user()->hasRole('admin')) {
-            $usuarios=User::orderBy('id','ASC')->paginate(5);
-            return view('auth.listUsers',compact('usuarios'));
-        }else{
-            return view('aprov.frmProv');
+        if (Auth::user()->hasRole('user')) {
+            return redirect()->route('home');
         }
-        
-        return view('auth.listUsers');
+
+        $usuarios=User::orderBy('id','ASC')->paginate(5);
+
+        return view('auth.listUsers',compact('usuarios'));
+    
     }
 
     /**

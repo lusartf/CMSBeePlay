@@ -182,7 +182,10 @@ use App\Banner;
             'uses'	=>	'BannerController@addInfo',
             'as'	=>	'addInfo'
         ]);
-
+    
+    /* --------- Gestion Plataformas Digitales --------- */
+        // Agregar Plataforma 
+        
 
 /* =================================================================== */
 

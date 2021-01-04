@@ -14,7 +14,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex justify-content-end">
-                                    <a href="{{ route('uploadForm') }}" class="btn btn-primary stretched-link">Agregar Imagenes</a>
+                                    <a href="{{ route('uploadForm') }}" class="btn btn-dark stretched-link">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        Agregar Imagenes
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -32,26 +35,40 @@
                                                     {{-- <a href="{{ route('deleteImg',$banners->id) }}" class="btn btn-outline-danger btn-sm bt-delete">Eliminar</a> --}}
                                                     <form method='POST' action="{{ route('deleteImg',$banners->id) }}" class="d-inline bt-delete">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm"><strong>Eliminar</strong></button>
+                                                        <button type="submit" class="btn btn-outline-danger btn-sm">
+                                                            <!-- strong>Eliminar</strong -->
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </button>
                                                     </form>
                                                 @else
-                                                    <a href="" class="btn btn-outline-secondary btn-sm disabled">Eliminar</a>
+                                                    <a href="" class="btn btn-outline-secondary btn-sm disabled">
+                                                        <!-- Eliminar -->
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </a>
                                                 @endif
                                             </div>
-                                            <div class="col-md-5 offset-md-4">
+                                            <div class="col-md-6 offset-md-3">
                                                 <div class="checkbox">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
                                                     <label for="">Slide: </label>
                                                     @if ($banners->status == 1)   
-                                                        <a href="{{ route('statusBanner',array($banners->id,0)) }}" class="btn btn-info btn-sm"><strong>Quitar</strong></a>
+                                                        <a href="{{ route('statusBanner',array($banners->id,0)) }}" class="btn btn-dark btn-sm">
+                                                            <strong>Quitar</strong>
+                                                        </a>
                                                     @else
-                                                        <a href="{{ route('statusBanner',array($banners->id,1)) }}" class="btn btn-outline-info btn-sm"><strong>Agregar</strong></a>
+                                                        <a href="{{ route('statusBanner',array($banners->id,1)) }}" class="btn btn-outline-dark btn-sm">
+                                                            <strong>Agregar</strong>
+                                                        </a>
                                                     @endif
                                                 </div>
                                             </div>
                                         </div>  
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <a href="{{ route('infoForm',$banners->id) }}" class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp; <strong>Info</strong> &nbsp;&nbsp;&nbsp;</a>
+                                                <a href="{{ route('infoForm',$banners->id) }}" class="btn btn-outline-info btn-sm">
+                                                    <!-- &nbsp;&nbsp;&nbsp; <strong>Info</strong> &nbsp;&nbsp;&nbsp; -->
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                </a>
                                             </div>
                                         </div>                                      
                                     </div>

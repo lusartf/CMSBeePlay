@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <strong>DASHBOARD ESTILOS</strong>
+                    <strong>ESTILO DE SITIO</strong>
                 </div>
 
                 <div class="card-body">
@@ -17,7 +17,7 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <a href="{{ route('style.edit') }}" class="btn btn-info btn-lg btn-block">
+                            <a href="{{ route('style.edit') }}" class="btn btn-outline-dark btn-lg btn-block">
                                 <strong>Estilo Base</strong>
                             </a>
                         </div>
@@ -25,7 +25,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <a href="{{ route('style.logoView') }}" class="btn btn-info btn-lg btn-block">
+                            <a href="{{ route('style.logoView') }}" class="btn btn-outline-dark btn-lg btn-block">
                                 <strong>Logotipos</strong>
                             </a>
                         </div>
@@ -33,7 +33,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <a href="{{ route('listBanner') }}" class="btn btn-info btn-lg btn-block">
+                            <a href="{{ route('listBanner') }}" class="btn btn-outline-dark btn-lg btn-block">
                                 <strong>Banner</strong>
                             </a>
                         </div>

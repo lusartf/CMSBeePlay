@@ -26,14 +26,16 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
+        /*
+            $request->user()->authorizeRoles(['user', 'admin']);
 
-        if (Auth::user()->hasRole('admin')) {
-            $usuarios=User::orderBy('id','ASC')->paginate(5);
-            return view('auth.home',compact('usuarios'));
-        }else{
-            return view('aprov.frmProv');
-        }
+            if (Auth::user()->hasRole('admin')) {
+                $usuarios=User::orderBy('id','ASC')->paginate(5);
+                return view('auth.home',compact('usuarios'));
+            }else{
+                return view('aprov.frmProv');
+            }
+        */
         
         return view('auth.home');
     }

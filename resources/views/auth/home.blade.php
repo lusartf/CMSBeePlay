@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <strong>DASHBOARD</strong>
+                    <strong>INICIO</strong>
                 </div>
 
                 <div class="card-body">
@@ -15,6 +15,34 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <a href="{{ route('listUsers') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Gestion de Usuarios</strong>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <a href="{{ route('listStyle') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Estilo de Sitio</strong>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            {{-- 
+                            <a href="{{ route('listBanner') }}" class="btn btn-info btn-lg btn-block">
+                                <strong>Banner</strong>
+                            </a>
+                            --}}
+                        </div>
+                    </div>
+                    <hr>
+
                 </div>
             </div>
         </div>

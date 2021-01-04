@@ -16,15 +16,17 @@
                         </div>
                     @endif
 
-                    <div class="pull-right">
+                    <div class="pull-left">
                         <div class="btn-group">
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}"  class="btn btn-info"  >Añadir Usuario</a>
+                                <a href="{{ route('register') }}"  class="btn btn-dark">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    Añadir Usuario
+                                </a>
                             @endif 
                         </div>
                     </div>
-
-                    <hr>
+                    <br><br>
                     <div class="table-container">
                         <table id="mytable" class="table table-bordred table-striped">
                             <thead>
@@ -32,8 +34,7 @@
                                 <th>Nombre</th>
                                 <th>Correo Electronico</th>   
                                 <th>Tipo</th>   
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                                 @if($usuarios->count())  
@@ -51,12 +52,10 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-primary" href="{{ route('users.edit',$usuario->id) }}" >
-                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
                                             </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('users.destroy',$usuario->id) }}" class="btn btn-danger" onclick="return confirm('Seguro que deseas deshabilitar al usuario?')">
-                                                <span class="glyphicon glyphicon-remove-sign"></span>
+                                            <a class="btn btn-outline-danger" href="{{ route('users.destroy',$usuario->id) }}"  onclick="return confirm('Seguro que deseas deshabilitar al usuario?')">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -67,7 +66,6 @@
                                     </tr>
                                 @endif 
                             </tbody>
-                
                         </table>
                     </div>
                 </div>
