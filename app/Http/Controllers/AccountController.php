@@ -17,6 +17,7 @@ use App\Banner;
 use Auth;
 use Cookie;
 use Session;
+use Alert;
 
 
 
@@ -110,6 +111,8 @@ class AccountController extends Controller
                 }
 
                 //return view('site.pages.portfolio');
+                Alert::message('Robots are working!');
+                
                 return redirect()->route('portfolio');
 
             }

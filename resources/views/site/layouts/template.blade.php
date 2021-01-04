@@ -387,6 +387,11 @@
             ]
         });
     </script>
+
+    <script src="js/sweetalert.min.js"></script>
+
+    <!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
     
 </body>
 </html>
