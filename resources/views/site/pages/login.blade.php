@@ -3,6 +3,15 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<style>
+  /*
+  #btn_login{
+    background:linear-gradient(to right, #b9c5c2 0%, #5fe0e0 100%);
+    color: #856a31;
+  }
+  */
+
+</style>
 
 
 {{-- lo que esta en section('content') lo ubica en layout.app en la etiqueta @yield('content')--}}
@@ -22,7 +31,7 @@
         </div>
         <div class="wrap-input100 validate-input" data-validate = "Enter username">
           <input id="user"  class="input100" type="text" name="username" placeholder="Usuario" >
-          <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+          <span id="in" class="focus-input100" data-placeholder="&#xe82a;"></span>
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -31,15 +40,12 @@
         </div>
 
         <div class="container-login100-form-btn m-t-32">
-          <button  class="login100-form-btn">
+          <button  class="login100-form-btn" id="btn_login">
             Ingresar
           </button>
            <!-- muestra el input de token -->
-           <div id="Token"></div>
+          <div id="Token"></div>
         </div>
-
-
-
       </form>
     </div>
   </div>
