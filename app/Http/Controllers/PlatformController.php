@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Platform;
-//use DB;
+use DB;
 
 class PlatformController extends Controller
 {
@@ -88,9 +88,9 @@ class PlatformController extends Controller
                     'link' => $request->url,
                     'name' => $request->name,
                     'description' => $request->description
-                    ]);
+                ]);
 
-        return redirect()->route('listBanner');
+        return redirect()->route('listPlatform');
     }
     
 

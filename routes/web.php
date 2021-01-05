@@ -184,7 +184,7 @@ use App\Banner;
         ]);
     
     /* --------- Gestion Plataformas Digitales --------- */
-        // Lista de Imagenes
+        // Lista de Plataforma
         Route::get('/backend/platform/list', 'PlatformController@index')->name('listPlatform');
 
         // Agregar Plataforma 
@@ -197,11 +197,16 @@ use App\Banner;
             'as'    => 'deletePlatform'
         ]);
 
-        //Editar Platform
+        //Editar Plataforma
         Route::get('/backend/platform/editPlat/{id}',[
             'uses'	=>	'PlatformController@editPlatform',
             'as'	=>	'editPlatform'
         ]);
+        Route::post('/backend/platform/update',[
+            'uses'	=>	'PlatformController@update',
+            'as'	=>	'updatePlatform'
+        ]);
+
 
 
 /* =================================================================== */

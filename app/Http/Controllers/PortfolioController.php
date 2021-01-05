@@ -62,7 +62,9 @@ class PortfolioController extends Controller
             $categories=(json_decode($response->getBody()->getContents())->response_object);
             $request->session()->put('categories', $categories);
             $i=0;
+            
             return view('site.pages.portfolio',compact('channels','categories','i'));
+
         } catch (ClientException $e) {
 
         }//fin catch 

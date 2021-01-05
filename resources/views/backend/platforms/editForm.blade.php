@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     --}}
-                    <form method="POST" action="{{ route('add') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('updatePlatform') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-6">

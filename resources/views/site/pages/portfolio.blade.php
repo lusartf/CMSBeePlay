@@ -29,32 +29,13 @@
 <!-- CARRUSEL PLATAFORMAS DIGITALES-->
     <h2 style="color: {{ session('textCategoryColor') }}">Plataformas Digitales</h2>
     <div class="row slider">
-        <div>
-            <img src="{{ asset('posters/plataformas/FoxPlay.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/YouTube.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/HBOGo.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/FoxPlay.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/YouTube.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/HBOGo.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div><div>
-            <img src="{{ asset('posters/plataformas/FoxPlay.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/YouTube.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
-        <div>
-            <img src="{{ asset('posters/plataformas/HBOGo.png') }}" alt="Girl in a jacket" width="150" height="150">
-        </div>
+        @foreach ( session('platforms') as $platform)
+            <div>
+                <a href="{{ $platform->link }}" target="_blank" class="btn" name="url">
+                    <img src="{{ asset($platform->logo) }}" alt="Girl in a jacket" width="150" height="150">
+                </a>
+            </div>
+        @endforeach
     </div>
 <!-- ------- -->
 

@@ -13,6 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 use App\Http\Controllers\Controller;
 use App\Style;
 use App\Banner;
+use App\Platform;
 
 use Auth;
 use Cookie;
@@ -74,7 +75,9 @@ class AccountController extends Controller
                 $data = Style::all()->first();
                 //Trae todos los Elementos de Banners Activos
                 $banner = json_decode(Banner::all()->where('status',1));
-                //dd($banner);
+                //Trae todos las plataformas
+                $plataformas = json_decode(Platform::all());
+                //dd($plataformas);
 
                 //Guardando en Variables de Sesion
                 if ($data == null) {
@@ -90,7 +93,8 @@ class AccountController extends Controller
                         'footerLogo' => 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png',
                         'loginLogo' => 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png',
                         'slideItem' => '4',
-                        'imgBanner' => $banner
+                        'imgBanner' => $banner,
+                        'platforms' => $plataformas
                     ]);
                 }else{
                     //Guardando configuracion de BD
@@ -105,7 +109,8 @@ class AccountController extends Controller
                         'footerLogo' => $data->footerLogo,
                         'loginLogo' => $data->loginLogo,
                         'slideItem' => $data->slideItem,
-                        'imgBanner' => $banner
+                        'imgBanner' => $banner,
+                        'platforms' => $plataformas
                     ]);
                     
                 }
