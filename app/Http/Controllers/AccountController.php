@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use App\Style;
 use App\Banner;
 use App\Platform;
+use App\StyleLogin;
 
 use Auth;
 use Cookie;
@@ -31,6 +32,14 @@ class AccountController extends Controller
     //Mostrar vista Login
     public function showLoginForm(){
     
+        $style = StyleLogin::first();
+        //dd($style);
+        session([
+            'background' => $style->imgBackground,
+            'colorBox' => $style->colorBox,
+            'colorButton' => $style->colorButton
+        ]);
+
         return view('site.pages.login');
     
     }

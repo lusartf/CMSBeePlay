@@ -4,8 +4,10 @@
     <br>
     <br>
     <br>
-    <div id="myDiv"></div>
-
+    <div class="container">
+        <div id="myDiv"></div>
+    </div>
+    
     <!--  Playlists -->
     <ul id="playlists" style="display:none;">
         <!-- Lista de Reproduccion Actual -->

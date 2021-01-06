@@ -17,11 +17,11 @@
 {{-- lo que esta en section('content') lo ubica en layout.app en la etiqueta @yield('content')--}}
 @section('content')
 
-<div class="limiter">
-  <div class="container-login100" style="background-image: url({{ asset('posters/background2.jpg') }});">
+<div class="limiter"> {{-- {{ asset('posters/background2.jpg') }} --}}
+  <div class="container-login100" style="background-image: url({{ asset(session('background')) }});">
     <div class="wrap-login100 p-t-30 p-b-50">
         <br><br><br>
-      <form method="POST" action="{{ route('account') }}" id="frm_login" onsubmit="guardar_localStorage();" class="login100-form validate-form p-b-33 p-t-5" style="background: #1C1C1C;">
+      <form method="POST" action="{{ route('account') }}" id="frm_login" onsubmit="guardar_localStorage();" class="login100-form validate-form p-b-33 p-t-5" style="background: {{ session('colorBox') }}">
         {{ csrf_field() }}
         <div class="login100-pic js-tilt" data-tilt   >
           <center>
@@ -40,7 +40,9 @@
         </div>
 
         <div class="container-login100-form-btn m-t-32">
-          <button  class="login100-form-btn" id="btn_login">
+          <button  class="login100-form-btn" id="btn_login" 
+          style="
+          background: {{ session('colorButton') }}">
             Ingresar
           </button>
            <!-- muestra el input de token -->

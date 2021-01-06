@@ -16,18 +16,37 @@
                         </div>
                     @endif
                     
+                    @if (Auth::user()->hasRole('admin'))
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <a href="{{ route('listUsers') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                    <strong>Gestion de Usuarios</strong>
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                    @endif
+                    
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <a href="{{ route('listUsers') }}" class="btn btn-outline-dark btn-lg btn-block">
-                                <strong>Gestion de Usuarios</strong>
+                            <a href="{{ route('listStyle') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Estilo de Sitio</strong>
                             </a>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <a href="{{ route('listStyle') }}" class="btn btn-outline-dark btn-lg btn-block">
-                                <strong>Estilo de Sitio</strong>
+                            <a href="{{ route('listPlatform') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Plataformas</strong>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <a href="{{ route('editLogin') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Estilo Login</strong>
                             </a>
                         </div>
                     </div>

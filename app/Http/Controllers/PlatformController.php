@@ -53,6 +53,11 @@ class PlatformController extends Controller
     public function destroy($id){
         //dd('Destruye Imagen de Galeria');
 
+        if (!$this->middleware('auth')) {
+            dd("No Autenticado; retornar a login");
+        }
+        
+
         //Recupera el objeto 
         $platform = Platform::where('id',$id)->first();
 

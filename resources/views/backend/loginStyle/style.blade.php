@@ -8,34 +8,44 @@
                 <div class="card-header"><strong>ESTILO LOGIN</strong></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{-- route('style.update') --}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('updateLogin') }}" enctype="multipart/form-data">
                         @csrf
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="id" type="hidden" class="form-control" name="id" value="{{ $styleLogin->id }}" onchange="" required>
+                            </div>
+                        </div>  
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="imgDelete" type="hidden" class="form-control" name="imgDelete" value="{{ $styleLogin->imgBackground }}" onchange="" required>
+                            </div>
+                        </div>  
 
                         <!-- Background -->
                         <div class="form-group row">
-                            <label for="logo" class="col-md-4 col-form-label text-md-right">Background</label>
+                            <label for="fondo" class="col-md-4 col-form-label text-md-right">Background</label>
                             <div class="col-md-6">
-                                <input id="logo" type="file" class="" name="logo" required>
+                                <input id="fondo" type="file" class="" name="fondo">
                             </div>
                         </div>
 
                         <!-- Color de Contenedor -->
                         <div class="form-group row">
-                            <label for="navBarColor" class="col-md-4 col-form-label text-md-right">
+                            <label for="colorBox" class="col-md-4 col-form-label text-md-right">
                                 <strong>Color de Contenedor</strong>
                             </label>
                             <div class="col-md-6">
-                                <input id="navBarColor" type="color" class="form-control" name="navBarColor" value="{{-- $style->navBarColor --}}" onchange="" required>                                
+                                <input id="colorBox" type="color" class="form-control" name="colorBox" value="{{ $styleLogin->colorBox }}" onchange="" required>                                
                             </div>
                         </div>
 
                         <!-- Color Boton -->
                         <div class="form-group row">
-                            <label for="iconNavBarColor" class="col-md-4 col-form-label text-md-right">
+                            <label for="colorButton" class="col-md-4 col-form-label text-md-right">
                                 <strong>Color de Boton</strong>
                             </label>
                             <div class="col-md-6">
-                                <input id="iconNavBarColor" type="color" class="form-control" name="iconNavBarColor" value="{{-- $style->iconNavBarColor --}}" onchange="" required>
+                                <input id="colorButton" type="color" class="form-control" name="colorButton" value="{{ $styleLogin->colorButton }}" onchange="" required>
                             </div>
                         </div>                       
 

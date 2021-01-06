@@ -156,16 +156,16 @@ use App\Banner;
         ]);
 
     /* ----- Gestion Estilo Login ----- */
-        //Editar Plataforma
+        //Trae Formulario de estilo de login
         Route::get('/backend/StyleLog/edit',[
             'uses'	=>	'StyleLoginController@editLogin',
             'as'	=>	'editLogin'
         ]);
-        /*
-        Route::post('/backend/platform/update',[
-            'uses'	=>	'PlatformController@update',
-            'as'	=>	'updatePlatform'
-        ]);*/
+        
+        Route::post('/backend/StyleLog/update',[
+            'uses'	=>	'StyleLoginController@update',
+            'as'	=>	'updateLogin'
+        ]);
 
 
 /* =================================================================== */

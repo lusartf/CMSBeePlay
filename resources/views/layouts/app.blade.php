@@ -46,11 +46,11 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Options Links -->
                         @if (Auth::user()->hasRole('admin'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('listUsers') }}">
-                                <strong>USUARIOS</strong>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('listUsers') }}">
+                                    <strong>USUARIOS</strong>
+                                </a>
+                            </li>
                         @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('listStyle') }}">
