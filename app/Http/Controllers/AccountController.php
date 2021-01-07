@@ -48,9 +48,9 @@ class AccountController extends Controller
 
     public function login(){ 
         //dd("Dentro de funcion login, encriptado");
-        //llamando la api de mago   
+        //llamando la api de mago   https://mago.beenet.com.sv:4433/
         $client = new Client([
-            'base_uri' => 'https://mago.beenet.com.sv:4433/',
+            'base_uri' => 'https://nexttv.instel.site:4433/',
             'timeout'  => 20,
         ]);
         
@@ -155,8 +155,9 @@ class AccountController extends Controller
             return redirect('/');
         }
 
+        //https://mago.beenet.com.sv:4433/
         $client = new Client([
-            'base_uri' => 'https://mago.beenet.com.sv:4433/',
+            'base_uri' => 'https://nexttv.instel.site:4433/',
             'timeout'  => 6.0,
         ]);
 
