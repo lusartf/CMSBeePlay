@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\StyleLogin;
+use App\Style;
 use DB;
 
 class StyleLoginController extends Controller
@@ -17,7 +18,7 @@ class StyleLoginController extends Controller
 
     public function editLogin(){
         $styleLogin = StyleLogin::first();
-        //dd($styleLogin);
+        
         return view('backend.loginStyle.style',compact('styleLogin'));
     }
 

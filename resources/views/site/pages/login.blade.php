@@ -25,7 +25,8 @@
         {{ csrf_field() }}
         <div class="login100-pic js-tilt" data-tilt   >
           <center>
-            <img src="{{ asset('posters/logo_beenetplay.png') }}"  alt="IMG">
+            {{-- <img src="{{ asset('posters/logo_beenetplay.png') }}"  alt="IMG"> --}}
+            <img src="{{ asset(session('imgLogin')) }}"  alt="IMG">
           </center>
           
         </div>

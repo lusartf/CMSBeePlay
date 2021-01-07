@@ -33,11 +33,13 @@ class AccountController extends Controller
     public function showLoginForm(){
     
         $style = StyleLogin::first();
-        //dd($style);
+        $imgLogin = Style::first();
+        
         session([
             'background' => $style->imgBackground,
             'colorBox' => $style->colorBox,
-            'colorButton' => $style->colorButton
+            'colorButton' => $style->colorButton,
+            'imgLogin' => $imgLogin->loginLogo
         ]);
 
         return view('site.pages.login');
