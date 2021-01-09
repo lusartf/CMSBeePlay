@@ -166,6 +166,37 @@ use App\Banner;
             'uses'	=>	'StyleLoginController@update',
             'as'	=>	'updateLogin'
         ]);
+    /* ----- Gestion de Redes Sociales ----- */
+        // Lista de Red Social
+        Route::get('/backend/rs/list', 'SocialController@index')->name('listSocial');
+
+        // Agregar Red Social
+        Route::get('/backend/rs/add', 'SocialController@addForm')->name('addSocial');
+        Route::post('/backend/rs/add', 'SocialController@add')->name('add');
+
+        //Eliminar Red Social
+        Route::post('/backend/rs/deleteRs/{id}',[
+            'uses'  => 'SocialController@destroy',
+            'as'    => 'deleteSocial'
+        ]);
+
+        //Editar Red Social
+        Route::get('/backend/rs/editRs/{id}',[
+            'uses'	=>	'SocialController@editSocial',
+            'as'	=>	'editSocial'
+        ]);
+        
+        Route::post('/backend/rs/update',[
+            'uses'	=>	'SocialController@update',
+            'as'	=>	'updateSocial'
+        ]);
+
+        //Cambiar estado de imagen para Red Social
+        Route::get('/backend/rs/status/{id}/{value}',[
+            'uses'	=>	'SocialController@agregar_quitar_rs',
+            'as'	=>	'statusRs'
+        ]);
+        
 
 
 /* =================================================================== */

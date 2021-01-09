@@ -14,7 +14,9 @@ use App\Http\Controllers\Controller;
 use App\Style;
 use App\Banner;
 use App\Platform;
+use App\Social;
 use App\StyleLogin;
+
 
 use Auth;
 use Cookie;
@@ -88,7 +90,9 @@ class AccountController extends Controller
                 $banner = json_decode(Banner::all()->where('status',1));
                 //Trae todos las plataformas
                 $plataformas = json_decode(Platform::all());
-                //dd($plataformas);
+                //Trae todas las RS
+                $rs = json_decode(Social::all()->where('status',1));
+                //dd($rs);
 
                 //Guardando en Variables de Sesion
                 if ($data == null) {
@@ -105,7 +109,8 @@ class AccountController extends Controller
                         'loginLogo' => 'https://beenet.com.sv/app/recursos_cmsbee/NextTV_logo.png',
                         'slideItem' => '4',
                         'imgBanner' => $banner,
-                        'platforms' => $plataformas
+                        'platforms' => $plataformas,
+                        'rs' => $rs
                     ]);
                 }else{
                     //Guardando configuracion de BD
@@ -121,7 +126,8 @@ class AccountController extends Controller
                         'loginLogo' => $data->loginLogo,
                         'slideItem' => $data->slideItem,
                         'imgBanner' => $banner,
-                        'platforms' => $plataformas
+                        'platforms' => $plataformas,
+                        'rs' => $rs
                     ]);
                     
                 }

@@ -1,6 +1,7 @@
 @extends('site.layouts.template')
 
 @section('content')
+    
     @include('site.layouts.partials.carousel')
     <br>
 <!-- CANALES -->

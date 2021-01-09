@@ -38,6 +38,14 @@
                             </a>
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <a href="{{ route('listSocial') }}" class="btn btn-outline-dark btn-lg btn-block">
+                                <strong>Redes Sociales</strong>
+                            </a>
+                        </div>
+                    </div>
                     <hr>
                     
                     
