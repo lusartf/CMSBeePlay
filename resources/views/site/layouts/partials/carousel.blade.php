@@ -39,7 +39,7 @@
 
         @foreach (session('imgBanner') as $item)
             @if ($i == 1)
-                <div class="carousel-item active" style="height: 600px">
+                <div class="carousel-item active">
                     <img src="{{ asset($item->url) }}" alt="Chicago">
                     <div class="carousel-caption">
                         <h3>{{ $item->title }}</h3>
@@ -50,7 +50,7 @@
                     $i = 0;
                 @endphp
             @else
-                <div class="carousel-item" style="height: 600px">
+                <div class="carousel-item">
                     <img src="{{ asset($item->url) }}" alt="Chicago">
                     <div class="carousel-caption">
                         <h3>{{ $item->title }}</h3>

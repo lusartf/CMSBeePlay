@@ -18,7 +18,7 @@
                     <div>
                         <a href="{{ url('player/?channel='.$channel -> title) }}" class="btn"  name="url" >
                             {{-- <img src="{{$channel -> icon_url}}" class="img-fluid mx-auto d-block" alt="img1" style="width: 150px; height:150;"> --}}
-                            <img src="{{ $channel -> icon_url }}" alt="Girl in a jacket" width="150" height="150">
+                            <img src="{{ $channel -> icon_url }}" class="img-fluid" alt="Imagen No Disponible"  width="150" height="150">
                         </a>
                     </div>
                 @endif
@@ -33,7 +33,7 @@
         @foreach ( session('platforms') as $platform)
             <div>
                 <a href="{{ $platform->link }}" target="_blank" class="btn" name="url">
-                    <img src="{{ asset($platform->logo) }}" alt="Girl in a jacket" width="150" height="150">
+                    <img src="{{ asset($platform->logo) }}" class="img-fluid" alt="Girl in a jacket" width="150" height="150">
                 </a>
             </div>
         @endforeach
