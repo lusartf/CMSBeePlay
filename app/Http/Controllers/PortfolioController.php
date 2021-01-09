@@ -63,6 +63,10 @@ class PortfolioController extends Controller
             $request->session()->put('categories', $categories);
             $i=0;
             
+            //Saber que categoria viene vacia
+            //dd($categories[0]->id);
+            //dd($channels);
+
             return view('site.pages.portfolio',compact('channels','categories','i'));
 
         } catch (ClientException $e) {

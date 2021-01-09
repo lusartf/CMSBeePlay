@@ -4,6 +4,7 @@
     
     @include('site.layouts.partials.carousel')
     <br>
+   
 <!-- CANALES -->
     @foreach ($categories as $category)
         {{--Ocultar categoria de favoritos--}}
