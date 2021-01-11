@@ -61,12 +61,41 @@ class PortfolioController extends Controller
             
             $categories=(json_decode($response->getBody()->getContents())->response_object);
             $request->session()->put('categories', $categories);
-            $i=0;
+            
             
             //Saber que categoria viene vacia
-            //dd($categories[0]->id);
-            //dd($channels);
+            $conteo = 0;
+            $k = 0;
+            //$totales = array();
+            $vacios = array();
+            
+            //Total de categorias disponibles
+            for ($i=0; $i < count($categories); $i++) { 
+                //dd($categories[10]);
+                for ($j=0; $j < count($channels); $j++) { 
+                    if ($categories[$i]->id == $channels[$j]->genre_id) {
+                        $conteo++;
+                    }
+                }
 
+                //$totales[$categories[$i]->name] = $conteo;
+                
+                if ($conteo == 0) {
+                    //Alamcena la posicion de categorias con 0 canales
+                    $vacios[$k] = $i;
+                    $k++;
+                }
+                
+                $conteo = 0;
+                
+            }
+            
+            //Eliminar elementos que no tienen canales asociados
+            foreach ($vacios as $v) {
+                unset($categories[$v]);
+            }
+                 
+            //dd($categories);
             return view('site.pages.portfolio',compact('channels','categories','i'));
 
         } catch (ClientException $e) {

@@ -8,9 +8,11 @@
 <!-- CANALES -->
     @foreach ($categories as $category)
         {{--Ocultar categoria de favoritos--}}
+        {{-- 
         @if($category -> name =="Favorites")
             @continue
         @endif
+        --}}
         <br>
         <h2 style="color: {{ session('textCategoryColor') }}" >{{ $category -> name }}</h2>
         <div class="row slider">
