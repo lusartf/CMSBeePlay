@@ -68,7 +68,7 @@ class PortfolioController extends Controller
             $k = 0;
             //$totales = array();
             $vacios = array();
-            
+    
             //Total de categorias disponibles
             for ($i=0; $i < count($categories); $i++) { 
                 for ($j=0; $j < count($channels); $j++) { 
@@ -81,9 +81,7 @@ class PortfolioController extends Controller
                     //Guarda posicion de categorias con 0 canales
                     $vacios[$k] = $i; $k++;
                 }
-                
                 $conteo = 0;
-                
             }
             
             //Eliminar elementos que no tienen canales asociados
@@ -91,7 +89,7 @@ class PortfolioController extends Controller
                 unset($categories[$v]);
             }
         /* -- -- -- -- -- -- -- */
-
+        
             //dd($categories);
             return view('site.pages.portfolio',compact('channels','categories','i'));
 
