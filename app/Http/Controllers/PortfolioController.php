@@ -63,7 +63,7 @@ class PortfolioController extends Controller
             $request->session()->put('categories', $categories);
             
             
-            //Saber que categoria viene vacia
+        /* -- Depurar Array de Categorias -- */
             $conteo = 0;
             $k = 0;
             //$totales = array();
@@ -71,19 +71,15 @@ class PortfolioController extends Controller
             
             //Total de categorias disponibles
             for ($i=0; $i < count($categories); $i++) { 
-                //dd($categories[10]);
                 for ($j=0; $j < count($channels); $j++) { 
                     if ($categories[$i]->id == $channels[$j]->genre_id) {
                         $conteo++;
                     }
                 }
-
                 //$totales[$categories[$i]->name] = $conteo;
-                
                 if ($conteo == 0) {
-                    //Alamcena la posicion de categorias con 0 canales
-                    $vacios[$k] = $i;
-                    $k++;
+                    //Guarda posicion de categorias con 0 canales
+                    $vacios[$k] = $i; $k++;
                 }
                 
                 $conteo = 0;
@@ -94,7 +90,8 @@ class PortfolioController extends Controller
             foreach ($vacios as $v) {
                 unset($categories[$v]);
             }
-                 
+        /* -- -- -- -- -- -- -- */
+
             //dd($categories);
             return view('site.pages.portfolio',compact('channels','categories','i'));
 
