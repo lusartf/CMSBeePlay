@@ -31,15 +31,17 @@
                                     <img src="{{ asset($rs->logo) }}" alt="" class="card-img-top" width="100" height="150">
                                     <div class="card-footer">
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <form method='POST' action="{{ route('deleteSocial',$rs->id) }}" class="d-inline bt-delete-rs">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm">
-                                                        <!-- strong>Eliminar</strong -->
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </form>     
-                                            </div>
+                                            @if ($rs->status == 0)
+                                                <div class="col-md-3">
+                                                    <form method='POST' action="{{ route('deleteSocial',$rs->id) }}" class="d-inline bt-delete-rs">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-outline-danger btn-sm">
+                                                            <!-- strong>Eliminar</strong -->
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </button>
+                                                    </form>     
+                                                </div>
+                                            @endif
                                             <div class="col-md-3">
                                                 <a href="{{ route('editSocial',$rs->id) }}" class="btn btn-outline-info btn-sm">
                                                     <!-- &nbsp;&nbsp;&nbsp; <strong>Info</strong> &nbsp;&nbsp;&nbsp; -->

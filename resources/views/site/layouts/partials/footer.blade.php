@@ -13,14 +13,17 @@
                     </div>
                 </div>
                 <div class="col-md-3 offset-md-2 d-none d-sm-none d-md-block" style="color: {{ session('textFooterColor') }};">
-                    <div style="padding-left: 20px">
-                        @foreach (session('rs') as $rs)
-                            <a href="{{$rs->url}}" target="_blank" style="text-decoration: none">
-                                <img src="{{ asset($rs->logo) }}" alt="" width="30" height="30">
-                            </a> 
-                        @endforeach
+                    <div style="padding-left: 20px;">
+                        <center>
+                            @foreach (session('rs') as $rs)
+                                <a href="{{$rs->url}}" target="_blank" style="text-decoration: none">
+                                    <img src="{{ asset($rs->logo) }}" alt="" width="30" height="30">
+                                </a> 
+                            @endforeach
+                            <font size=4>info@beenetplay.com</font>
+                        </center>
                     </div>
-                    <font size=4>info@beenetplay.com</font>
+                    
                 </div>
                 <!-- mobile -->
                     <div class="col-sm-3 d-md-none">
