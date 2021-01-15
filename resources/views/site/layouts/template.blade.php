@@ -332,7 +332,7 @@
 
 <body style="background-color: {{ session('backgroundColor') }}">    
 
-    @include('site.layouts.partials.navbar');
+   
 
     @yield('content')
     
