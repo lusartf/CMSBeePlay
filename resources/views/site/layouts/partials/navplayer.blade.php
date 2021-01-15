@@ -23,3 +23,77 @@
         </ul>
     </div>
 </nav>
+
+
+<script>
+
+    //PASO 3 Creacion de la funcion Chromecast
+    var initializeCastApi = function() {
+    console.log('initializeCastApi');
+
+    var sessionRequest = new chrome.cast.SessionRequest(
+    // Para aplicaciones de Android:
+    //CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID
+    
+    //Para aplicaciones de Chrome:
+    chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
+    var apiConfig = new chrome.cast.ApiConfig(
+    sessionRequest, sessionListener, receiverListener);
+    chrome.cast.initialize(apiConfig, onInitSuccess, onError);
+    };
+
+    if (!chrome.cast || !chrome.cast.isAvailable) {
+    setTimeout(initializeCastApi, 1000);
+    }
+
+    function onInitSuccess() {
+    console.log('onInitSuccess');
+    }
+
+    function onError(e) {
+    console.log('onError', e);
+    }
+
+    function sessionListener(e) {
+    console.log('sessionListener', e);
+
+    }
+
+    function receiverListener(availability) {
+    console.log('receiverListener', availability);
+
+    if(availability === chrome.cast.ReceiverAvailability.AVAILABLE) {
+    $(".button").removeAttr("disabled").text("Start");
+    }
+    }
+
+    function onSessionRequestSuccess(session) {
+    console.log('onSessionRequestSuccess', session);
+
+    //Aqui almacena la url del canal con el formato correcto
+    var mediaInfo = new chrome.cast.media.MediaInfo(
+    //"https://xcdrsbsv-a.beenet.com.sv/foxsports1_720/foxsports1_720_out/playlist.m3u8",
+    //"video/mp4"
+        //Se obtiene el valor de la Cookie
+        localStorage.getItem("urlCast")
+                        
+    );
+    
+    //Carga la data que es enviada  por medio del chromecast
+    var request = new chrome.cast.media.LoadRequest(mediaInfo);
+    session.loadMedia(request, onMediaLoadSuccess, onError);
+    }
+    
+    
+
+    function onMediaLoadSuccess(e) {
+    console.log('onMediaLoadSuccess', e);
+    }
+
+
+
+    document.getElementById("btn").onclick = function() {
+
+    chrome.cast.requestSession(onSessionRequestSuccess, onError);
+    };
+</script>
