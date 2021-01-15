@@ -2,6 +2,7 @@
 
 @section('content')
 @include('site.layouts.partials.navplayer');
+
     <br>
     <br>
     <br>

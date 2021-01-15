@@ -11,7 +11,8 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" >
                 <a  class="btn " id="btn"  name="url" role="button" style="color: #fa1616; ">
-                   cast
+                    <span class="iconify" data-icon="fa-brands:chromecast" data-inline="false" style="width: 20px; height:20px;"></span>
+                   
                 </a>
             </li>
             <li class="nav-item" >

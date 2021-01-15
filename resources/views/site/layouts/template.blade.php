@@ -349,6 +349,10 @@
     
     <!-- ionic icons -->
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!--brand icons-->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+   
+    <!--Chromecast-->
     <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
 
     <script type="text/javascript">
